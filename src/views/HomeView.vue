@@ -2,7 +2,8 @@
 export default {
   data: function () {
     return {
-      message: "Welcome to Vue.js!",
+      message: "Wicked awesome cookbook!",
+      messageTwo: "Second message",
     };
   },
   created: function () {},
@@ -13,6 +14,8 @@ export default {
 <template>
   <div class="home">
     <h1>{{ message }}</h1>
+    <!-- BUILD
+    <BUTTON></BUTTON> -->
   </div>
 </template>
 
