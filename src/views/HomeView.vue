@@ -52,7 +52,7 @@ export default {
     <button v-on:click="createProduct()">Create product</button>
     <div v-for="product in products" v-bind:key="product.id">
       <h2>Name: {{ product.name }}</h2>
-      <img src="image.example.url" :alt="product.name" />
+      <img v-bind:src="product.image_url" :alt="product.name" />
       <h4>Price: {{ product.price }}</h4>
     </div>
   </div>
