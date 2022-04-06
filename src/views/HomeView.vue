@@ -1,17 +1,24 @@
 <script>
+import axios from "axios";
+
 export default {
   data: function () {
     return {
       message: "Wicked awesome store of things!",
-      products: [
-        { id: 1, name: "Shakespeare plays", price: 10 },
-        { id: 2, name: "Jane Austen collection", price: 15 },
-        { id: 3, name: "Charles Dickens: a collection", price: 20 },
-      ],
+      products: [],
     };
   },
-  created: function () {},
-  methods: {},
+  created: function () {
+    this.indexProducts();
+  },
+  methods: {
+    indexProducts: function () {
+      axios.get("http://localhost:3000/products.json").then((response) => {
+        this.products = response.data;
+        console.log("All products", this.products);
+      });
+    },
+  },
 };
 </script>
 
